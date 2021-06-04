@@ -1,62 +1,32 @@
 package br.blog.users;
 
-public abstract class Usuario {
-	private String nome;
-	private String senha;
-	private String email;
-	private int id;
-	private String tipoUsuario;
+import java.util.List;
+
+import br.blog.forms.Avaliacao;
+
+import java.util.ArrayList;
+
+public class Usuario extends Adiministrador {
+	private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 	
 	public Usuario() {
 		super();
 	}
-	
+
 	public Usuario(String nome, String senha, String email, int id) {
 		super();
 		this.nome = nome;
 		this.senha = senha;
 		this.email = email;
 		this.id = id;
+		this.tipoUsuario = "adm";
 	}
 
-	public String getNome() {
-		return nome;
+	public List<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+		this.avaliacoes = avaliacoes;
 	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
-
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
-	
 }
