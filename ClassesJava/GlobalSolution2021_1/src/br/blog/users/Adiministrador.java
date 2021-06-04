@@ -9,6 +9,7 @@ public class Adiministrador {
 	
 	public Adiministrador() {
 		super();
+		this.tipoUsuario = "adm";
 	}
 	
 	public Adiministrador(String nome, String senha, String email, int id) {
@@ -17,7 +18,7 @@ public class Adiministrador {
 		this.senha = senha;
 		this.email = email;
 		this.id = id;
-		this.tipoUsuario = "Adiministrador";
+		this.tipoUsuario = "adm";
 	}
 
 	public String getNome() {

@@ -11,6 +11,7 @@ public class Usuario extends Adiministrador {
 	
 	public Usuario() {
 		super();
+		this.tipoUsuario = "usuario";
 	}
 
 	public Usuario(String nome, String senha, String email, int id) {
@@ -19,7 +20,7 @@ public class Usuario extends Adiministrador {
 		this.senha = senha;
 		this.email = email;
 		this.id = id;
-		this.tipoUsuario = "adm";
+		this.tipoUsuario = "usuario";
 	}
 
 	public List<Avaliacao> getAvaliacoes() {
