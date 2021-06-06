@@ -1,11 +1,17 @@
 package br.blog.users;
 
+import java.util.Date;
+import java.util.Scanner;
+
+import br.blog.forms.Post;
+
 public class Adiministrador {
 	protected String nome;
 	protected String senha;
 	protected String email;
 	protected int id;
 	protected String tipoUsuario;
+	private Scanner sc = new Scanner(System.in);
 	
 	public Adiministrador() {
 		super();
@@ -19,6 +25,26 @@ public class Adiministrador {
 		this.email = email;
 		this.id = id;
 		this.tipoUsuario = "adm";
+	}
+	
+	// Método de criar uma postagem
+	public Post postar() {
+		Post post = new Post();
+		Date data = new Date();
+		post.setDataCriacao(data);
+		post.setId(this.id);
+		
+		
+		System.out.print("DIGITE O TÍTULO DA POSTAGEM: ");
+		String titulo = sc.next();
+		post.setTitulo(titulo);
+		
+		System.out.println("DIGITE O CONTEÚDO DA POSTAGEM: ");
+		System.out.print("-> ");
+		String conteudo = sc.next();
+		post.setConteudo(conteudo);
+		
+		return post;
 	}
 
 	public String getNome() {
