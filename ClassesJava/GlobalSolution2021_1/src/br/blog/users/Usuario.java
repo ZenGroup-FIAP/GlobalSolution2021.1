@@ -45,6 +45,21 @@ public class Usuario extends Adiministrador {
 		
 		return av;
 	}
+	
+	public void salvarAvaliacao(Avaliacao avaliacao) {
+		avaliacoes.add(avaliacao);
+	}
+	
+	public void mostrarAvaliacoes() {
+		System.out.println("AVALIAÇÃO DE " + this.nome);
+		for (Avaliacao avaliacao : avaliacoes) {
+			System.out.println("NOTA: " + avaliacao.getNota());
+			System.out.println("COMENTÁRIO: " + avaliacao.getComentario());
+			System.out.println("ID HOTEL: " + avaliacao.getIdHotel());
+			System.out.println("ID: " + avaliacao.getId());
+			System.out.println("---------------------------");
+		}
+	}
 
 	public List<Avaliacao> getAvaliacoes() {
 		return avaliacoes;
