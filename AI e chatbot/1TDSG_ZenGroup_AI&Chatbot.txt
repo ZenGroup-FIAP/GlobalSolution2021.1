@@ -1,0 +1,23 @@
+ZenGroup - 1TDSG
+
+Alfonso Matsuoka Schiavelli - RM87336
+Felipe Kim - RM87067
+Lucas Itiro Feitosa Matutani - RM87283
+Matheus Feitosa Silva - RM86782
+Matheus Cruz - RM88987
+
+Credenciais:
+
+Watson Assistant
+	Assistant ID: f557d941-0724-484e-80c5-b706e24035d7
+	API Key: 3JM6Z5BUy1v6HOPMX-w7zwOfPLs0fj9wiDgMNA0go1t3
+
+Telegram
+	botName: TravelerZenBot
+	token: 1864493198:AAFEh4ZOxaV2xG96Xap95iAhsBcjwG6aX8w
+	link: t.me/TravelerZenBot
+
+Tradutor
+	API key: 
+	
+
