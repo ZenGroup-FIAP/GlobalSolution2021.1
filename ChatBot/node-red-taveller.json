@@ -14,8 +14,8 @@
         "bot": "e34fb0a7.b75da",
         "saveDataDir": "",
         "filterCommands": false,
-        "x": 75,
-        "y": 480,
+        "x": 60.714287757873535,
+        "y": 484.28573417663574,
         "wires": [
             [
                 "44ab76b8.991678",
@@ -33,8 +33,8 @@
         "bot": "e34fb0a7.b75da",
         "haserroroutput": false,
         "outputs": 1,
-        "x": 1252,
-        "y": 478,
+        "x": 1650.5713901519775,
+        "y": 473.71427726745605,
         "wires": [
             []
         ],
@@ -63,18 +63,18 @@
         "type": "function",
         "z": "5b6bde30.3f11d",
         "name": "procOutTelegram",
-        "func": "msg.params = {\n    chatId: msg.payload.chatId,\n    texto: msg.payload.content\n}\nmsg.payload = msg.payload.content;\nreturn msg;",
+        "func": "msg.params = {\n    session_id: msg.payload.chatId,\n    texto: msg.payload.content\n}\nmsg.payload = msg.payload.content;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 155,
-        "y": 477,
+        "x": 132.8571434020996,
+        "y": 482.1428642272949,
         "wires": [
             [
-                "30bf97b1.99f9f8",
-                "193abdac.b24272"
+                "193abdac.b24272",
+                "e48ae1c5.4463f"
             ]
         ],
         "l": false
@@ -101,12 +101,12 @@
         "trainid": "",
         "lgparams2": true,
         "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8eea9916-d09e-472f-b821-d110ea5de8d6",
-        "x": 245,
-        "y": 478,
+        "x": 471.1428985595703,
+        "y": 532.571478843689,
         "wires": [
             [
-                "52b763f9.b83a1c",
-                "5461f3de.d37e0c"
+                "5461f3de.d37e0c",
+                "52b763f9.b83a1c"
             ]
         ],
         "l": false
@@ -123,8 +123,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 315.5,
-        "y": 417,
+        "x": 611.0555191040039,
+        "y": 580.9681825637817,
         "wires": []
     },
     {
@@ -144,25 +144,6 @@
         "wires": []
     },
     {
-        "id": "5461f3de.d37e0c",
-        "type": "function",
-        "z": "5b6bde30.3f11d",
-        "name": "",
-        "func": "if (msg.params.texto === msg.payload) {\n    // Se a mensagem ainda ser a mesma então não foi traduzida\n    msg.texto = {\n        traduzida: false\n    }\n} else {\n    // Mensagem traduzida\n    msg.texto = {\n        traduzida: true\n    }\n        \n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 354.5,
-        "y": 477,
-        "wires": [
-            [
-                "cbf053b5.d7797"
-            ]
-        ]
-    },
-    {
         "id": "55c5fd32.78dd84",
         "type": "debug",
         "z": "5b6bde30.3f11d",
@@ -171,12 +152,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "texto",
+        "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 510.5,
-        "y": 426,
+        "x": 723.3571701049805,
+        "y": 435.99999618530273,
         "wires": []
     },
     {
@@ -194,8 +175,8 @@
         "timeout": "",
         "optout-learning": false,
         "persist-session-id": false,
-        "x": 518.5,
-        "y": 477,
+        "x": 742.7857894897461,
+        "y": 472.7142868041992,
         "wires": [
             [
                 "55c5fd32.78dd84",
@@ -225,8 +206,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 689.5,
-        "y": 476,
+        "x": 910.9286041259766,
+        "y": 471.71429538726807,
         "wires": [
             [
                 "4f9adacc.322de4"
@@ -258,8 +239,8 @@
         "trainid": "",
         "lgparams2": true,
         "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8eea9916-d09e-472f-b821-d110ea5de8d6",
-        "x": 1009.5,
-        "y": 400,
+        "x": 1250.9286270141602,
+        "y": 438.57142639160156,
         "wires": [
             [
                 "d9774c29.2c944",
@@ -279,8 +260,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1004.5,
-        "y": 358,
+        "x": 1251.642822265625,
+        "y": 402.28571701049805,
         "wires": []
     },
     {
@@ -288,14 +269,14 @@
         "type": "function",
         "z": "5b6bde30.3f11d",
         "name": "",
-        "func": "msg.payload = {\n    chatId: msg.params.chatId,\n    content: msg.payload,\n    type: \"message\"\n}\nreturn msg;",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    type: \"message\"\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1117.5,
-        "y": 476,
+        "x": 1460.357089996338,
+        "y": 476.0000057220459,
         "wires": [
             [
                 "9b413e39.87345",
@@ -314,8 +295,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 832.5,
-        "y": 452,
+        "x": 1049.642894744873,
+        "y": 440.5714302062988,
         "wires": [
             [
                 "271a98f5.3f84f8",
@@ -334,8 +315,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 849,
-        "y": 504,
+        "x": 1047.5714416503906,
+        "y": 506.8571262359619,
         "wires": [
             [
                 "eb6b906b.5fbad",
@@ -355,8 +336,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 772.5,
-        "y": 394,
+        "x": 1059.6428260803223,
+        "y": 405.428560256958,
         "wires": []
     },
     {
@@ -371,8 +352,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1165.5,
-        "y": 564,
+        "x": 1485.4999465942383,
+        "y": 526.857159614563,
         "wires": []
     },
     {
@@ -387,9 +368,129 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 844.5,
-        "y": 567,
+        "x": 1063.0714111328125,
+        "y": 561.2856864929199,
         "wires": []
+    },
+    {
+        "id": "e48ae1c5.4463f",
+        "type": "watson-language-translator-identify",
+        "z": "5b6bde30.3f11d",
+        "name": "LI",
+        "service-endpoint": "",
+        "x": 236.19537353515625,
+        "y": 486.5575933456421,
+        "wires": [
+            [
+                "6d710496.f48a3c",
+                "7a10923.169216c"
+            ]
+        ]
+    },
+    {
+        "id": "6d710496.f48a3c",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "lang",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 231.90975952148438,
+        "y": 525.9523468017578,
+        "wires": []
+    },
+    {
+        "id": "5461f3de.d37e0c",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "if (msg.params.texto === msg.payload) {\n    // Se a mensagem ainda ser a mesma então não foi traduzida\n    msg.texto = {\n        traduzida: false\n    }\n} else {\n    // Mensagem traduzida\n    msg.texto = {\n        traduzida: true\n    }\n        \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 579.261962890625,
+        "y": 478.1111087799072,
+        "wires": [
+            [
+                "cbf053b5.d7797"
+            ]
+        ]
+    },
+    {
+        "id": "ca2782e4.a1df8",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450.23807525634766,
+        "y": 398.57135486602783,
+        "wires": []
+    },
+    {
+        "id": "7a10923.169216c",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "Verifica",
+        "func": "if (msg.lang.language == \"pt\") {\n    msg.texto = false;\n} else if (msg.lang.language == \"en\") {\n    msg.texto = true;\n} else {\n    msg.texto = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 354.16344833374023,
+        "y": 601.2214889526367,
+        "wires": [
+            [
+                "23077f9.3002a8"
+            ]
+        ]
+    },
+    {
+        "id": "23077f9.3002a8",
+        "type": "switch",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "property": "texto",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 407.4967956542969,
+        "y": 485.65021324157715,
+        "wires": [
+            [
+                "5461f3de.d37e0c",
+                "ca2782e4.a1df8"
+            ],
+            [
+                "30bf97b1.99f9f8"
+            ]
+        ]
     },
     {
         "id": "e34fb0a7.b75da",

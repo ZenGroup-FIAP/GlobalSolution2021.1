@@ -1,10 +1,43 @@
 {
   "intents": [
     {
+      "intent": "despedida",
+      "examples": [
+        {
+          "text": "apenas isso"
+        },
+        {
+          "text": "Até logo"
+        },
+        {
+          "text": "Até mais"
+        },
+        {
+          "text": "Beleza"
+        },
+        {
+          "text": "é só isso"
+        },
+        {
+          "text": "Falou"
+        },
+        {
+          "text": "FLW"
+        },
+        {
+          "text": "Tchau"
+        }
+      ],
+      "description": "Despedida"
+    },
+    {
       "intent": "hospedar",
       "examples": [
         {
           "text": "Gostaria de saber mais sobre os hotéis"
+        },
+        {
+          "text": "ok"
         },
         {
           "text": "Onde consigo me hospedar?"
@@ -353,7 +386,7 @@
       },
       "conditions": "anything_else",
       "dialog_node": "Em outros casos",
-      "previous_sibling": "node_2_1623165022424",
+      "previous_sibling": "node_1_1623333138845",
       "disambiguation_opt_out": true
     },
     {
@@ -424,6 +457,27 @@
       "conditions": "#saudacao",
       "dialog_node": "node_10_1623167699298",
       "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Despedida",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tchau, espero ter ajudado!<?context.clear()?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#despedida",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1623333138845",
+      "previous_sibling": "node_2_1623165022424"
     },
     {
       "type": "standard",
@@ -955,7 +1009,11 @@
       "previous_sibling": "response_1_1623161684895"
     }
   ],
-  "counterexamples": [],
+  "counterexamples": [
+    {
+      "text": "ok"
+    }
+  ],
   "system_settings": {
     "disambiguation": {
       "prompt": "Você quis dizer:",
