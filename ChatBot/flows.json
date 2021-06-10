@@ -1,0 +1,418 @@
+[
+    {
+        "id": "5b6bde30.3f11d",
+        "type": "tab",
+        "label": "GlobalSolution2021.1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4e8e7c81.c8dd14",
+        "type": "telegram receiver",
+        "z": "5b6bde30.3f11d",
+        "name": "receiver",
+        "bot": "e34fb0a7.b75da",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 75,
+        "y": 480,
+        "wires": [
+            [
+                "44ab76b8.991678",
+                "88e1faf.37c5708"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "9b413e39.87345",
+        "type": "telegram sender",
+        "z": "5b6bde30.3f11d",
+        "name": "sender",
+        "bot": "e34fb0a7.b75da",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1252,
+        "y": 478,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "44ab76b8.991678",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 75,
+        "y": 440,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "88e1faf.37c5708",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "procOutTelegram",
+        "func": "msg.params = {\n    chatId: msg.payload.chatId,\n    texto: msg.payload.content\n}\nmsg.payload = msg.payload.content;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 155,
+        "y": 477,
+        "wires": [
+            [
+                "30bf97b1.99f9f8",
+                "193abdac.b24272"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "30bf97b1.99f9f8",
+        "type": "watson-translator",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "action": "translate",
+        "basemodel": "ar-en",
+        "domain": "general",
+        "srclang": "en",
+        "destlang": "pt",
+        "password": "",
+        "apikey": "i8MgszLvniRIO8FVH5sccBABwP9Cvxs6HRtq2NOMc2J-",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "en",
+        "destlanghidden": "pt",
+        "basemodelhidden": "ar-en",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8eea9916-d09e-472f-b821-d110ea5de8d6",
+        "x": 245,
+        "y": 478,
+        "wires": [
+            [
+                "52b763f9.b83a1c",
+                "5461f3de.d37e0c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "52b763f9.b83a1c",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 315.5,
+        "y": 417,
+        "wires": []
+    },
+    {
+        "id": "193abdac.b24272",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 196.5,
+        "y": 368,
+        "wires": []
+    },
+    {
+        "id": "5461f3de.d37e0c",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "if (msg.params.texto === msg.payload) {\n    // Se a mensagem ainda ser a mesma então não foi traduzida\n    msg.texto = {\n        traduzida: false\n    }\n} else {\n    // Mensagem traduzida\n    msg.texto = {\n        traduzida: true\n    }\n        \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 354.5,
+        "y": 477,
+        "wires": [
+            [
+                "cbf053b5.d7797"
+            ]
+        ]
+    },
+    {
+        "id": "55c5fd32.78dd84",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "texto",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510.5,
+        "y": 426,
+        "wires": []
+    },
+    {
+        "id": "cbf053b5.d7797",
+        "type": "watson-assistant-v2",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "service-endpoint": "",
+        "assistant_id": "f557d941-0724-484e-80c5-b706e24035d7",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 518.5,
+        "y": 477,
+        "wires": [
+            [
+                "55c5fd32.78dd84",
+                "f673eab4.4672f8"
+            ]
+        ]
+    },
+    {
+        "id": "f673eab4.4672f8",
+        "type": "switch",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "property": "texto.traduzida",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 689.5,
+        "y": 476,
+        "wires": [
+            [
+                "4f9adacc.322de4"
+            ],
+            [
+                "60488a0e.cb78a4"
+            ]
+        ]
+    },
+    {
+        "id": "271a98f5.3f84f8",
+        "type": "watson-translator",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "action": "translate",
+        "basemodel": "ar-en",
+        "domain": "general",
+        "srclang": "pt",
+        "destlang": "en",
+        "password": "",
+        "apikey": "i8MgszLvniRIO8FVH5sccBABwP9Cvxs6HRtq2NOMc2J-",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "pt",
+        "destlanghidden": "en",
+        "basemodelhidden": "ar-en",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8eea9916-d09e-472f-b821-d110ea5de8d6",
+        "x": 1009.5,
+        "y": 400,
+        "wires": [
+            [
+                "d9774c29.2c944",
+                "eb6b906b.5fbad"
+            ]
+        ]
+    },
+    {
+        "id": "d9774c29.2c944",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1004.5,
+        "y": 358,
+        "wires": []
+    },
+    {
+        "id": "eb6b906b.5fbad",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "msg.payload = {\n    chatId: msg.params.chatId,\n    content: msg.payload,\n    type: \"message\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1117.5,
+        "y": 476,
+        "wires": [
+            [
+                "9b413e39.87345",
+                "8c23b70e.85ec48"
+            ]
+        ]
+    },
+    {
+        "id": "4f9adacc.322de4",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "msg.payload = msg.payload.output.generic[0].text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 832.5,
+        "y": 452,
+        "wires": [
+            [
+                "271a98f5.3f84f8",
+                "420b0e90.0e9aa"
+            ]
+        ]
+    },
+    {
+        "id": "60488a0e.cb78a4",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "msg.payload = msg.payload.output.generic[0].text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 849,
+        "y": 504,
+        "wires": [
+            [
+                "eb6b906b.5fbad",
+                "c16f5a09.1907e8"
+            ]
+        ]
+    },
+    {
+        "id": "420b0e90.0e9aa",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 772.5,
+        "y": 394,
+        "wires": []
+    },
+    {
+        "id": "8c23b70e.85ec48",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1165.5,
+        "y": 564,
+        "wires": []
+    },
+    {
+        "id": "c16f5a09.1907e8",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 844.5,
+        "y": 567,
+        "wires": []
+    },
+    {
+        "id": "e34fb0a7.b75da",
+        "type": "telegram bot",
+        "botname": "TravelerZenBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
