@@ -1,0 +1,1034 @@
+{
+  "intents": [
+    {
+      "intent": "despedida",
+      "examples": [
+        {
+          "text": "apenas isso"
+        },
+        {
+          "text": "Até logo"
+        },
+        {
+          "text": "Até mais"
+        },
+        {
+          "text": "Beleza"
+        },
+        {
+          "text": "é só isso"
+        },
+        {
+          "text": "Falou"
+        },
+        {
+          "text": "FLW"
+        },
+        {
+          "text": "Tchau"
+        }
+      ],
+      "description": "Despedida"
+    },
+    {
+      "intent": "hospedar",
+      "examples": [
+        {
+          "text": "Gostaria de saber mais sobre os hotéis"
+        },
+        {
+          "text": "ok"
+        },
+        {
+          "text": "Onde consigo me hospedar?"
+        },
+        {
+          "text": "Onde posso me hospedar?"
+        },
+        {
+          "text": "O que você me recomenda para hospedagem?"
+        },
+        {
+          "text": "Pode me dar as opções pra hotel?"
+        },
+        {
+          "text": "Poderia me falar mais sobre as opções de hospedagem?"
+        },
+        {
+          "text": "Quais opções tem disponíveis?"
+        },
+        {
+          "text": "Quais são os hotéis disponíveis?"
+        },
+        {
+          "text": "Que hotéis tem pra se hospedar?"
+        },
+        {
+          "text": "quero hospedagem"
+        },
+        {
+          "text": "quero me hospedar"
+        },
+        {
+          "text": "Quero saber mais sobre os hotéis disponíveis"
+        },
+        {
+          "text": "quero um hotel"
+        },
+        {
+          "text": "to afim de me hospedar"
+        }
+      ],
+      "description": "Onde o usuário pode se hospedar."
+    },
+    {
+      "intent": "parques",
+      "examples": [
+        {
+          "text": "pode me falar do ibirapuera"
+        },
+        {
+          "text": "Poderia me falar as opções de parque da cidade?"
+        },
+        {
+          "text": "Quais parques tem na cidade de São Paulo?"
+        },
+        {
+          "text": "Quais são os parques disponíveis?"
+        },
+        {
+          "text": "Quero ir para um parque"
+        },
+        {
+          "text": "Quero me conectar com a natureza"
+        },
+        {
+          "text": "quero saber mais sobre os parques"
+        },
+        {
+          "text": "Quero ver um pouco de verde."
+        },
+        {
+          "text": "Quero visitar um parque"
+        },
+        {
+          "text": "to afim de visitar um parque"
+        }
+      ],
+      "description": "voltado aos parques da cidade de São Paulo"
+    },
+    {
+      "intent": "saudacao",
+      "examples": [
+        {
+          "text": "Boa noite"
+        },
+        {
+          "text": "Boa tarde"
+        },
+        {
+          "text": "Bom dia"
+        },
+        {
+          "text": "Eae"
+        },
+        {
+          "text": "Iae"
+        },
+        {
+          "text": "Oi"
+        },
+        {
+          "text": "Olá"
+        },
+        {
+          "text": "Salve"
+        }
+      ],
+      "description": "Saudação para o Telegram"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "diaria",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "100",
+          "synonyms": [
+            "cem",
+            "cem conto",
+            "cem reais",
+            "cemzão"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "1000",
+          "synonyms": [
+            "mil conto",
+            "mil reais",
+            "milzão"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "200",
+          "synonyms": [
+            "200tão",
+            "duzentão",
+            "duzentos contos",
+            "duzentos reais"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "300",
+          "synonyms": [
+            "trezentão",
+            "trezentos contos",
+            "trezentos reais"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "400",
+          "synonyms": [
+            "quatrocentão",
+            "quatrocentos contos",
+            "quatrocentos reais"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "500",
+          "synonyms": [
+            "quinhentão",
+            "quinhentos contos",
+            "quinhentos reais"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "distancia",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "10 km",
+          "synonyms": [
+            "10 quilometros",
+            "10 quilômetros",
+            "dez quilometros",
+            "dez quilômetros"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "20 km",
+          "synonyms": [
+            "20 quilometros",
+            "20 quilômetros",
+            "vinte quilometros",
+            "vinte quilômetros"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "2 km",
+          "synonyms": [
+            "2 quilometros",
+            "2 quilômetros",
+            "dois quilometros",
+            "dois quilômetros"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "5 km",
+          "synonyms": [
+            "5 quilometros",
+            "5 quilômetros",
+            "cinco quilometros",
+            "cinco quilômetros"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "parques",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Alfredo Volpi",
+          "synonyms": [
+            "Alfredo",
+            "Volpi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Buenos Aires",
+          "synonyms": [
+            "Aires",
+            "argentino",
+            "Buenos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ibirapuera",
+          "synonyms": [
+            "Ibira"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Independência",
+          "synonyms": [
+            "Ipiranga"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Jardim Botânico",
+          "synonyms": [
+            "Botânico"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sim-nao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "nao",
+          "synonyms": [
+            "não",
+            "não não",
+            "negativo",
+            "nem",
+            "nope"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sim",
+          "synonyms": [
+            "blz",
+            "certo",
+            "de acordo",
+            "ok",
+            "positivo",
+            "tudo bem"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-currency",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá. Como posso te ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_1_1623333138845",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para o valor de $diaria_valor, teremos os seguintes hotéis:\n\n- IBIS Styles São Paulo Anhembi (R$116 ~ R$129)\n\n- Confort Ibirapuera (R$150 ~ R$223)\n\n- Blue Tree Premium Morumbi (R$205 ~ R$207)\n\n- Mercure São Paulo Pamplona (R$212 ~ R$235)\n\n- Bourbon Convention Ibirapuera (R$172 ~ R$236)\n\n- Blue Tree Premium Paulista (R$223 ~ R$286)\n\n- Golden Tulip Paulista Plaza (R$207 ~ R$257)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_9_1623160178031",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1623160178044",
+      "previous_sibling": "handler_9_1623160178044"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1623160178031",
+      "context": {
+        "diaria_valor": "@diaria:300"
+      },
+      "conditions": "@diaria:300",
+      "event_name": "input",
+      "dialog_node": "handler_9_1623160178044"
+    },
+    {
+      "type": "standard",
+      "title": "Valor da diária",
+      "parent": "node_9_1623158975281",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@sys-currency",
+      "dialog_node": "node_10_1623160128399"
+    },
+    {
+      "type": "standard",
+      "title": "Saudação",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá! Como posso te ajudar?"
+              },
+              {
+                "text": "Opa! O que gostaria?"
+              },
+              {
+                "text": "Oi, tudo bem? Como posso te ajudar hoje?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#saudacao",
+      "dialog_node": "node_10_1623167699298",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Despedida",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tchau, espero ter ajudado!<?context.clear()?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#despedida",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1623333138845",
+      "previous_sibling": "node_2_1623165022424"
+    },
+    {
+      "type": "standard",
+      "title": "Parques",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sobre parques, temos uma variedade grande na Cidade de São Paulo. Posso te indicar alguns, para isso só preciso que me dê o seu OK."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#parques",
+      "dialog_node": "node_2_1623165022424",
+      "previous_sibling": "node_9_1623167073194"
+    },
+    {
+      "type": "standard",
+      "title": "Alfredo Volpi",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do parque Alfredo Volpi é: Rua Engenheiro Oscar Americano, 480 - Morumbi, São Paulo - SP."
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto de segunda à sexta-feira das 06:00h às 18:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_9_1623165492803",
+      "dialog_node": "node_3_1623166901579",
+      "previous_sibling": "node_4_1623166844890"
+    },
+    {
+      "type": "standard",
+      "title": "Independencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do parque da Independência é: Av. Nazaré, s/n - Ipiranga, São Paulo - SP, 04263-200."
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto todos os dias das 06:00h às 18:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_9_1623165492803",
+      "conditions": "@parques:Independência",
+      "dialog_node": "node_3_1623166948147",
+      "previous_sibling": "node_3_1623166901579"
+    },
+    {
+      "type": "standard",
+      "title": "Buenos Aires",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do parque Buenos Aires é: Av. Angélica, 1500 - Higienópolis, São Paulo - SP, 01227-000"
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto todos os dias das 06:00h às 19:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_9_1623165492803",
+      "conditions": "@parques:(Buenos Aires)",
+      "dialog_node": "node_4_1623166844890",
+      "previous_sibling": "node_7_1623166754142"
+    },
+    {
+      "type": "standard",
+      "parent": "node_10_1623160128399",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@distancia || @sim-nao",
+      "dialog_node": "node_6_1623162360886"
+    },
+    {
+      "type": "standard",
+      "title": "Endereços e horários",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do Parque Ibirapuera é: Av. Pedro Álvares Cabral - Vila Mariana, São Paulo - SP, 04094-050."
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto todos os dias das 05:00h às 00:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_9_1623165492803",
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "@parques:Ibirapuera",
+      "dialog_node": "node_6_1623165982966"
+    },
+    {
+      "type": "standard",
+      "title": "Jardim Botânico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do Jardim Botânico é: Av. Miguel Estéfno, 3031 - Vila Água Funda, São Paulo - SP, 04301-902. "
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto de terça-feira à domingo das 09:00h às 17:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_9_1623165492803",
+      "conditions": "@parques:(Jardim Botânico)",
+      "dialog_node": "node_7_1623166754142",
+      "previous_sibling": "node_6_1623165982966"
+    },
+    {
+      "type": "standard",
+      "title": "Hospedagem",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sobre as opções de hospedagem, sugerimos os seguintes hotéis(com base nas avaliações dos usuários): \n\n- IBIS Styles São Paulo Anhembi; \n\n- Confort Ibirapuera; \n\n- Blue Tree Premium Morumbi; \n\n- Mercure São Paulo Pamplona; \n\n- Sheraton São Paulo WTC Hotel; \n\n- Bourbon Convention Ibirapuera; \n\n- Blue Tree Preimum Paulista; \n\n- Golden Tulip Paulista Plaza e; \n\n- Renaissance São Paulo Hotel. \n\nBasta você escolher o melhor para você. Se quiser, posso te ajudar a escolher! Basta me dar um OK ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#hospedar",
+      "dialog_node": "node_8_1623157749044",
+      "previous_sibling": "node_10_1623167699298"
+    },
+    {
+      "type": "standard",
+      "title": "Sim e não",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Pode começar me falando o valor máximo que pretende pagar em uma diária? Temos opções que vão até R$ 300, R$ 500 e R$ 1000. Pra facilitar, pode me falar seu orçamento máximo para a diária no seguinte formato: até R$ 300, até R$ 500 e até R$ 1000."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1623157749044",
+      "context": {},
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_9_1623158975281"
+    },
+    {
+      "type": "standard",
+      "title": "OK",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Beleza! Seguem as opções recomendadas de parques que temos em São Paulo!\n\n- Parque do Ibirapuera\n\n- Jardim Botânico de São Paulo\n\n- Parque Alfredo Volpi\n\n- Parque Buenos Aires\n\n- Parque da Independência\n\nDentre esses, o que sugerimos fortemente é o Ibirapuera. Além de ser o maior parque urbano de São Paulo, também é o mais visitado da América Latina. Se quiser, posso falar o endereço e horário de funcionamento de cada um deles. Para isso, é só me falar o nome do parque desejado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1623165022424",
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_9_1623165492803"
+    },
+    {
+      "type": "standard",
+      "title": "Parques && Endereço",
+      "output": {
+        "generic": []
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1623165982966"
+      },
+      "conditions": "#parques && @parques",
+      "dialog_node": "node_9_1623167073194",
+      "previous_sibling": "node_8_1623157749044"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Dentro do que você selecionou, é possível escolher as seguintes opções:\n\n- Blue Tree Preimum Paulista (250 metros da Av Paulista. 3 minutos andando.)\n\n- Mercure São Paulo Pamplona (1.3km da Av Paulista. 5 minutos de carro.)\n\n- Renaissance São Paulo Hotel (1.4km da Av Paulista. 7 minutos de carro.)\n\n- Golden Tulip Paulista Plaza (1.9 km da Av Paulista. 8 minutos de carro.)\n\nAgora basta acessar o website oficial do hotel para reservar seu quarto, ou acesse nossa página de \"Onde se hospedar\" para mais informações. Espero ter ajudado! ;)"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1623162360886",
+      "context": {},
+      "conditions": "@distancia:(2 km)",
+      "dialog_node": "response_10_1623162448691"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para o valor de até R$ $valor_diaria, teremos os seguintes hotéis:\n\n- IBIS Styles São Paulo Anhembi (R$ 116 ~ R$ 129)\n\n- Confort Ibirapuera (R$ 150 ~ R$ 223)\n\n- Blue Tree Premium Morumbi (R$ 205 ~ R$ 207)\n\n- Mercure São Paulo Pamplona (R$ 212 ~ R$ 235)\n\n- Bourbon Convention Ibirapuera (R$ 172 ~ R$ 236)\n\n- Blue Tree Premium Paulista (R$ 223 ~ R$ 286)\n\n- Golden Tulip Paulista Plaza (R$ 207 ~ R$ 257)\n\n- Sheraton São Paulo WTC Hotel (R$ 355 ~ R$ 366)\n\n- Renaissance São Paulo Hotel (R$ 624 ~ R$ 752)\n\nAgora, tem alguma preferência pra localização? Podemos filtrar novamente as opções, baseado na distância delas em relação ao MASP(ponto central da Av Paulista). Para facilitar, pode me falar se tem preferência do seguinte formato: até 2 km, até 10 km, e até 20 km."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1623160128399",
+      "context": {
+        "valor_diaria": "@diaria.literal"
+      },
+      "conditions": "@diaria:1000",
+      "dialog_node": "response_1_1623161684895",
+      "previous_sibling": "response_8_1623161589988"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do parque Buenos Aires é: Av. Angélica, 1500 - Higienópolis, São Paulo - SP, 01227-000"
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto todos os dias das 06:00h às 19:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_6_1623165982966",
+      "disabled": true,
+      "conditions": "@parques:(Buenos Aires)",
+      "dialog_node": "response_1_1623166474945",
+      "previous_sibling": "response_3_1623166281748"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do parque da Independência é: Av. Nazaré, s/n - Ipiranga, São Paulo - SP, 04263-200."
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto todos os dias das 06:00h às 18:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_6_1623165982966",
+      "disabled": true,
+      "conditions": "@parques:Independência",
+      "dialog_node": "response_2_1623166612644",
+      "previous_sibling": "response_9_1623166536759"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dentro do que você selecionou, é possível escolher as seguintes opções:\n\n- Blue Tree Preimum Paulista (250 metros da Av Paulista. 3 minutos andando.)\n\n- Mercure São Paulo Pamplona (1.3km da Av Paulista. 5 minutos de carro.)\n\n- Renaissance São Paulo Hotel (1.4km da Av Paulista. 7 minutos de carro.)\n\n- Golden Tulip Paulista Plaza (1.9 km da Av Paulista. 8 minutos de carro.)\n\n- IBIS Styles São Paulo Anhembi (8km da Av Paulista. 17 minutos de carro.)\n\n- Confort Ibirapuera (6.5km da Av Paulista. 19 minutos de carro.)\n\n- Bourbon Convention Ibirapuera (8.8km da Av Paulista. 22 minutos de carro.)\n\n- Blue Tree Premium Morumbi (10.8km da AV Paulista. 24 minutos de carro.)\n\nAgora basta acessar o website oficial do hotel para reservar seu quarto, ou acesse nossa página de \"Onde se hospedar\" para mais informações. Espero ter ajudado! ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1623162360886",
+      "context": {
+        "valor_diaria": 300
+      },
+      "conditions": "@distancia:(10 km)",
+      "dialog_node": "response_3_1623162992219",
+      "previous_sibling": "response_10_1623162448691"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do Parque Ibirapuera é: Av. Pedro Álvares Cabral - Vila Mariana, São Paulo - SP, 04094-050."
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto todos os dias das 05:00h às 00:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_6_1623165982966",
+      "disabled": true,
+      "conditions": "@parques:Ibirapuera",
+      "dialog_node": "response_3_1623165998740"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do Jardim Botânico é: Av. Miguel Estéfno, 3031 - Vila Água Funda, São Paulo - SP, 04301-902. "
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto de terça-feira à domingo das 09:00h às 17:00h(em feriados os horários podem mudar).  Espero ter ajudado. ;)"
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_6_1623165982966",
+      "disabled": true,
+      "conditions": "@parques:(Jardim Botânico)",
+      "dialog_node": "response_3_1623166281748",
+      "previous_sibling": "response_3_1623165998740"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Para o valor de até R$ $valor_diaria, teremos os seguintes hotéis:\n\n- IBIS Styles São Paulo Anhembi (R$ 116 ~ R$ 129)\n\n- Confort Ibirapuera (R$ 150 ~ R$ 223)\n\n- Blue Tree Premium Morumbi (R$ 205 ~ R$ 207)\n\n- Mercure São Paulo Pamplona (R$ 212 ~ R$ 235)\n\n- Bourbon Convention Ibirapuera (R$ 172 ~ R$ 236)\n\n- Blue Tree Premium Paulista (R$ 223 ~ R$ 286)\n\n- Golden Tulip Paulista Plaza (R$ 207 ~ R$ 257)\n\nAgora, tem alguma preferência pra localização? Podemos filtrar novamente as opções, baseado na distância delas em relação ao MASP(ponto central da Av Paulista). Para facilitar, pode me falar se tem preferência do seguinte formato: até 2 km, até 10 km, e até 20 km."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_10_1623160128399",
+      "context": {
+        "valor_diaria": "@diaria.literal"
+      },
+      "conditions": "@diaria:300",
+      "dialog_node": "response_5_1623161207794",
+      "previous_sibling": "node_6_1623162360886"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! Então espero ter ajudado ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1623162360886",
+      "conditions": "@sim-nao:nao",
+      "dialog_node": "response_7_1623167183960",
+      "previous_sibling": "response_8_1623163209428"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para o valor de até R$ $valor_diaria, teremos os seguintes hotéis:\n\n- IBIS Styles São Paulo Anhembi (R$ 116 ~ R$ 129)\n\n- Confort Ibirapuera (R$ 150 ~ R$ 223)\n\n- Blue Tree Premium Morumbi (R$ 205 ~ R$ 207)\n\n- Mercure São Paulo Pamplona (R$ 212 ~ R$ 235)\n\n- Bourbon Convention Ibirapuera (R$ 172 ~ R$ 236)\n\n- Blue Tree Premium Paulista (R$ 223 ~ R$ 286)\n\n- Golden Tulip Paulista Plaza (R$ 207 ~ R$ 257)\n\n- Sheraton São Paulo WTC Hotel (R$ 355 ~ R$ 366)\n\nAgora, tem alguma preferência pra localização? Podemos filtrar novamente as opções, baseado na distância delas em relação ao MASP(ponto central da Av Paulista). Para facilitar, pode me falar se tem preferência do seguinte formato: até 2 km, até 10 km, e até 20 km."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1623160128399",
+      "context": {
+        "valor_diaria": "@diaria.literal"
+      },
+      "conditions": "@diaria:500",
+      "dialog_node": "response_8_1623161589988",
+      "previous_sibling": "response_5_1623161207794"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dentro do que você selecionou, é possível escolher as seguintes opções:\n\n- Blue Tree Preimum Paulista (250 metros da Av Paulista. 3 minutos andando.)\n\n- Mercure São Paulo Pamplona (1.3km da Av Paulista. 5 minutos de carro.)\n\n- Renaissance São Paulo Hotel (1.4km da Av Paulista. 7 minutos de carro.)\n\n- Golden Tulip Paulista Plaza (1.9 km da Av Paulista. 8 minutos de carro.)\n\n- IBIS Styles São Paulo Anhembi (8km da Av Paulista. 17 minutos de carro.)\n\n- Confort Ibirapuera (6.5km da Av Paulista. 19 minutos de carro.)\n\n- Bourbon Convention Ibirapuera (8.8km da Av Paulista. 22 minutos de carro.)\n\n- Blue Tree Premium Morumbi (10.8km da AV Paulista. 24 minutos de carro.)\n\n- Sheraton São Paulo WTC Hotel (13.4km da Av Paulista. 25 minutos de carro. )\n\nAgora basta acessar o website oficial do hotel para reservar seu quarto, ou acesse nossa página de \"Onde se hospedar\" para mais informações. Espero ter ajudado! ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1623162360886",
+      "conditions": "@distancia:(20 km)",
+      "dialog_node": "response_8_1623163209428",
+      "previous_sibling": "response_3_1623162992219"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O endereço do parque Alfredo Volpi é: Rua Engenheiro Oscar Americano, 480 - Morumbi, São Paulo - SP."
+              },
+              {
+                "text": "Sobre o horário de funcionamento, o parque está aberto de segunda à sexta-feira das 06:00h às 18:00h(em feriados os horários podem mudar)."
+              },
+              {
+                "text": "Espero ter ajudado. ;)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_6_1623165982966",
+      "disabled": true,
+      "conditions": "@parques:(Alfredo Volpi)",
+      "dialog_node": "response_9_1623166536759",
+      "previous_sibling": "response_1_1623166474945"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1623160128399",
+      "variable": "$diaria_valor",
+      "dialog_node": "slot_9_1623160178031",
+      "previous_sibling": "response_1_1623161684895"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "ok"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Ajuda - Traveller",
+  "language": "pt-br",
+  "description": "Bot de ajuda para o blog Traveller."
+}

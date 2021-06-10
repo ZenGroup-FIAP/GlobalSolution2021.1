@@ -1,0 +1,519 @@
+[
+    {
+        "id": "5b6bde30.3f11d",
+        "type": "tab",
+        "label": "GlobalSolution2021.1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4e8e7c81.c8dd14",
+        "type": "telegram receiver",
+        "z": "5b6bde30.3f11d",
+        "name": "receiver",
+        "bot": "e34fb0a7.b75da",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 60.714287757873535,
+        "y": 484.28573417663574,
+        "wires": [
+            [
+                "44ab76b8.991678",
+                "88e1faf.37c5708"
+            ],
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "9b413e39.87345",
+        "type": "telegram sender",
+        "z": "5b6bde30.3f11d",
+        "name": "sender",
+        "bot": "e34fb0a7.b75da",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1650.5713901519775,
+        "y": 473.71427726745605,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "44ab76b8.991678",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 75,
+        "y": 440,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "88e1faf.37c5708",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "procOutTelegram",
+        "func": "msg.params = {\n    session_id: msg.payload.chatId,\n    texto: msg.payload.content\n}\nmsg.payload = msg.payload.content;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 132.8571434020996,
+        "y": 482.1428642272949,
+        "wires": [
+            [
+                "193abdac.b24272",
+                "e48ae1c5.4463f"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "30bf97b1.99f9f8",
+        "type": "watson-translator",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "action": "translate",
+        "basemodel": "ar-en",
+        "domain": "general",
+        "srclang": "en",
+        "destlang": "pt",
+        "password": "",
+        "apikey": "i8MgszLvniRIO8FVH5sccBABwP9Cvxs6HRtq2NOMc2J-",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "en",
+        "destlanghidden": "pt",
+        "basemodelhidden": "ar-en",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8eea9916-d09e-472f-b821-d110ea5de8d6",
+        "x": 471.1428985595703,
+        "y": 532.571478843689,
+        "wires": [
+            [
+                "5461f3de.d37e0c",
+                "52b763f9.b83a1c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "52b763f9.b83a1c",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 611.0555191040039,
+        "y": 580.9681825637817,
+        "wires": []
+    },
+    {
+        "id": "193abdac.b24272",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 196.5,
+        "y": 368,
+        "wires": []
+    },
+    {
+        "id": "55c5fd32.78dd84",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 723.3571701049805,
+        "y": 435.99999618530273,
+        "wires": []
+    },
+    {
+        "id": "cbf053b5.d7797",
+        "type": "watson-assistant-v2",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "service-endpoint": "",
+        "assistant_id": "f557d941-0724-484e-80c5-b706e24035d7",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 742.7857894897461,
+        "y": 472.7142868041992,
+        "wires": [
+            [
+                "55c5fd32.78dd84",
+                "f673eab4.4672f8"
+            ]
+        ]
+    },
+    {
+        "id": "f673eab4.4672f8",
+        "type": "switch",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "property": "texto.traduzida",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 910.9286041259766,
+        "y": 471.71429538726807,
+        "wires": [
+            [
+                "4f9adacc.322de4"
+            ],
+            [
+                "60488a0e.cb78a4"
+            ]
+        ]
+    },
+    {
+        "id": "271a98f5.3f84f8",
+        "type": "watson-translator",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "action": "translate",
+        "basemodel": "ar-en",
+        "domain": "general",
+        "srclang": "pt",
+        "destlang": "en",
+        "password": "",
+        "apikey": "i8MgszLvniRIO8FVH5sccBABwP9Cvxs6HRtq2NOMc2J-",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "pt",
+        "destlanghidden": "en",
+        "basemodelhidden": "ar-en",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8eea9916-d09e-472f-b821-d110ea5de8d6",
+        "x": 1250.9286270141602,
+        "y": 438.57142639160156,
+        "wires": [
+            [
+                "d9774c29.2c944",
+                "eb6b906b.5fbad"
+            ]
+        ]
+    },
+    {
+        "id": "d9774c29.2c944",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1251.642822265625,
+        "y": 402.28571701049805,
+        "wires": []
+    },
+    {
+        "id": "eb6b906b.5fbad",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    type: \"message\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1460.357089996338,
+        "y": 476.0000057220459,
+        "wires": [
+            [
+                "9b413e39.87345",
+                "8c23b70e.85ec48"
+            ]
+        ]
+    },
+    {
+        "id": "4f9adacc.322de4",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "msg.payload = msg.payload.output.generic[0].text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1049.642894744873,
+        "y": 440.5714302062988,
+        "wires": [
+            [
+                "271a98f5.3f84f8",
+                "420b0e90.0e9aa"
+            ]
+        ]
+    },
+    {
+        "id": "60488a0e.cb78a4",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "msg.payload = msg.payload.output.generic[0].text;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1047.5714416503906,
+        "y": 506.8571262359619,
+        "wires": [
+            [
+                "eb6b906b.5fbad",
+                "c16f5a09.1907e8"
+            ]
+        ]
+    },
+    {
+        "id": "420b0e90.0e9aa",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1059.6428260803223,
+        "y": 405.428560256958,
+        "wires": []
+    },
+    {
+        "id": "8c23b70e.85ec48",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1485.4999465942383,
+        "y": 526.857159614563,
+        "wires": []
+    },
+    {
+        "id": "c16f5a09.1907e8",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1063.0714111328125,
+        "y": 561.2856864929199,
+        "wires": []
+    },
+    {
+        "id": "e48ae1c5.4463f",
+        "type": "watson-language-translator-identify",
+        "z": "5b6bde30.3f11d",
+        "name": "LI",
+        "service-endpoint": "",
+        "x": 236.19537353515625,
+        "y": 486.5575933456421,
+        "wires": [
+            [
+                "6d710496.f48a3c",
+                "7a10923.169216c"
+            ]
+        ]
+    },
+    {
+        "id": "6d710496.f48a3c",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "lang",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 231.90975952148438,
+        "y": 525.9523468017578,
+        "wires": []
+    },
+    {
+        "id": "5461f3de.d37e0c",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "func": "if (msg.params.texto === msg.payload) {\n    // Se a mensagem ainda ser a mesma então não foi traduzida\n    msg.texto = {\n        traduzida: false\n    }\n} else {\n    // Mensagem traduzida\n    msg.texto = {\n        traduzida: true\n    }\n        \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 579.261962890625,
+        "y": 478.1111087799072,
+        "wires": [
+            [
+                "cbf053b5.d7797"
+            ]
+        ]
+    },
+    {
+        "id": "ca2782e4.a1df8",
+        "type": "debug",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450.23807525634766,
+        "y": 398.57135486602783,
+        "wires": []
+    },
+    {
+        "id": "7a10923.169216c",
+        "type": "function",
+        "z": "5b6bde30.3f11d",
+        "name": "Verifica",
+        "func": "if (msg.lang.language == \"pt\") {\n    msg.texto = false;\n} else if (msg.lang.language == \"en\") {\n    msg.texto = true;\n} else {\n    msg.texto = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 354.16344833374023,
+        "y": 601.2214889526367,
+        "wires": [
+            [
+                "23077f9.3002a8"
+            ]
+        ]
+    },
+    {
+        "id": "23077f9.3002a8",
+        "type": "switch",
+        "z": "5b6bde30.3f11d",
+        "name": "",
+        "property": "texto",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 407.4967956542969,
+        "y": 485.65021324157715,
+        "wires": [
+            [
+                "5461f3de.d37e0c",
+                "ca2782e4.a1df8"
+            ],
+            [
+                "30bf97b1.99f9f8"
+            ]
+        ]
+    },
+    {
+        "id": "e34fb0a7.b75da",
+        "type": "telegram bot",
+        "botname": "TravelerZenBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
